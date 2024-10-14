@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --primary: #040033;
+  --white: #fff;
+  --l-purple: #a39fd2;
+  --secondary: #4b42f0;
+  --text-color: #353a44;
+  --muted: #5f6575;
+  --success: #26ca54;
+  --danger: #ff7067;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply px-8 w-full text-white font-bold rounded-lg mt-4 py-3 bg-[#962a85] hover:bg-[#b1319e] transition ease-in-out delay-150 duration-300 shadow-lg;
+}
+
+.form {
+  @apply w-full flex flex-col justify-center items-center;
+}
+
+.field {
+  @apply p-2 outline-none border-2 rounded-lg;
+}
+
+.tabs {
+  @apply flex items-center space-x-4 bg-white px-4 py-3 rounded-lg hover:bg-gray-100 transition delay-150 duration-300 font-semibold;
+}
+
+.gradient {
+  @apply bg-gradient-to-r from-pink-200 via-white to-sky-200;
+}
+
+.verifyBtn {
+  @apply px-4 text-white rounded-xl font-bold py-3 bg-[#756cee] shadow-lg hover:shadow-xl hover:bg-[#5c52f3] duration-300 delay-100;
+}
+
+/* custom classes */
+.primary-btn {
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: var(--white);
+  background-color: var(--secondary);
+  border: 2px solid;
+  border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0px 0px 0px 1px #4b42f0;
+  box-shadow: 0px 1px 2px 0px #08062f40;
+}
+.primary-btn-border {
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+.success {
+  color: var(--success);
+}
+.danger {
+  color: var(--danger);
+}
+
+@media (min-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-ctm {
+    max-width: 1400px;
+  }
+}
+/* =================================================== */
+.stats-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.stats-slider-inner {
+  display: flex;
+  width: max-content; /* Adjusts to the total width of the content */
+  animation: scroll 20s linear infinite;
+}
+
+/* Keyframes for infinite scrolling effect */
+@keyframes scroll {
+  from {
+    transform: translateX(0); /* Start at the default position */
+  }
+  to {
+    transform: translateX(-50%); /* Scroll by half the width (with duplicated content) */
+  }
+}
+
+/* =================================================== */
+
+/* Pause animation on hover */
+.stats-slider:hover .stats-slider-inner {
+  animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+  .primary-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .sch-btn {
+    width: 100%;
+    text-align: center !important;
+  }
+}
