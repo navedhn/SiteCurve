@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from 'react';
 import { Link } from "react-router-dom";
 import { RiInformation2Line } from "react-icons/ri";
 import { FiArrowUpRight, FiArrowDownLeft } from "react-icons/fi";
@@ -20,9 +20,59 @@ const Stats = () => {
     { name: "sample.com", stats: "5M", rating: 60, up: true },
   ];
 
+  const partnersRef = useRef(null);
+  const scrollSpeed = 2; // Adjust the speed (higher value = faster scrolling)
+
+  useEffect(() => {
+    const allPartners = partnersRef.current;
+
+    if (allPartners) {
+      // Duplicate the logos to create a seamless infinite scroll effect
+      allPartners.innerHTML += allPartners.innerHTML;
+
+      // Set the initial scroll position
+      let scrollLeft = 0;
+      let isScrolling = true;
+
+      const scroll = () => {
+        if (isScrolling) {
+          scrollLeft += scrollSpeed;
+
+          // If scrolled past the duplicated content, reset to the original content
+          if (scrollLeft >= allPartners.scrollWidth / 2) {
+            scrollLeft = 0;
+          }
+
+          allPartners.scrollLeft = scrollLeft;
+        }
+      };
+
+      const continuousScroll = setInterval(scroll, 1000 / 60); // 60 FPS
+
+      // Event listeners for pausing and resuming the scroll on hover
+      const stopScroll = () => {
+        isScrolling = false;
+      };
+
+      const resumeScroll = () => {
+        isScrolling = true;
+      };
+
+      allPartners.addEventListener('mouseenter', stopScroll);
+      allPartners.addEventListener('mouseleave', resumeScroll);
+
+      // Cleanup on unmount
+      return () => {
+        clearInterval(continuousScroll);
+        allPartners.removeEventListener('mouseenter', stopScroll);
+        allPartners.removeEventListener('mouseleave', resumeScroll);
+      };
+    }
+  }, []);
+
   return (
-    <div className="stats stats-slider ">
-      <div className="stats-slider-inner grid grid-cols-12 gap-1">
+    <div className="stats stats-slider">
+      <div className="stats-slider-inner grid grid-cols-12 gap-1 stats-slider" ref={partnersRef}>
         {data &&
           data.map((item, idx) => (
             <div key={idx} className="col-span-5 sm:col-span-12">
