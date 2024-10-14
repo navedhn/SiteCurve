@@ -1,0 +1,70 @@
+#sidebar {
+  background-color: var(--primary);
+  padding: 10px 20px;
+  .logo {
+    svg {
+      width: 100px;
+      height: 40px;
+    }
+  }
+  .dropdown {
+    align-self: center;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .side-btn {
+    align-self: center;
+  }
+}
+.stats-card {
+  background-color: #373458 !important;
+  padding: 10px;
+  border-radius: 4px;
+  width: max-conten;
+  svg {
+    margin-top: 4px;
+    margin-left: 3px;
+  }
+}
+
+.statistics {
+  display: flex;
+  gap: 15px;
+  svg {
+    margin-top: 1px;
+  }
+  .rating {
+    color: var(--l-purple);
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  .stat-1 {
+    font-family: Work Sans;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 1023px) {
+  .menu {
+    align-self: center;
+    margin-left: 0;
+    margin: 0 -20px;
+    .menu-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4px;
+      color: var(--l-purple);
+      padding: 10px 15px;
+      border-bottom: 1px solid #2a274e;
+      gap: 0px;
+    }
+  }
+}
