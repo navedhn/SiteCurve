@@ -57,16 +57,23 @@
     margin-left: 0;
     margin: 0 -20px;
     .menu-items {
+<<<<<<< HEAD
       font-weight: 400;
       font-family: Inter;
       line-height: 21.6px;
       font-size: 18px;
+=======
+>>>>>>> 7d18d2c2b81dec585a5d5633da6ce52b2c574c82
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 4px;
       color: var(--l-purple);
+<<<<<<< HEAD
       padding: 13px 15px;
+=======
+      padding: 10px 15px;
+>>>>>>> 7d18d2c2b81dec585a5d5633da6ce52b2c574c82
       border-bottom: 1px solid #2a274e;
       gap: 0px;
     }

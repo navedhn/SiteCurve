@@ -91,6 +91,7 @@
 
 .stats-slider-inner {
   display: flex;
+<<<<<<< HEAD
   width: max-content; 
   position: relative;
 }
@@ -113,6 +114,21 @@
 }
 /* Keyframes for infinite scrolling effect */
 
+=======
+  width: max-content; /* Adjusts to the total width of the content */
+  animation: scroll 20s linear infinite;
+}
+
+/* Keyframes for infinite scrolling effect */
+@keyframes scroll {
+  from {
+    transform: translateX(0); /* Start at the default position */
+  }
+  to {
+    transform: translateX(-50%); /* Scroll by half the width (with duplicated content) */
+  }
+}
+>>>>>>> 7d18d2c2b81dec585a5d5633da6ce52b2c574c82
 
 /* =================================================== */
 
@@ -130,7 +146,10 @@
     width: 100%;
     text-align: center !important;
   }
+<<<<<<< HEAD
   .stats-slider-inner {
     width: 100%;
 }
+=======
+>>>>>>> 7d18d2c2b81dec585a5d5633da6ce52b2c574c82
 }
