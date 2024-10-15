@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useEffect, useRef } from 'react';
-=======
-import React from "react";
->>>>>>> 7d18d2c2b81dec585a5d5633da6ce52b2c574c82
 import { Link } from "react-router-dom";
 import { RiInformation2Line } from "react-icons/ri";
 import { FiArrowUpRight, FiArrowDownLeft } from "react-icons/fi";
@@ -24,7 +20,6 @@ const Stats = () => {
     { name: "sample.com", stats: "5M", rating: 60, up: true },
   ];
 
-<<<<<<< HEAD
   const partnersRef = useRef(null);
   const scrollSpeed = 2; // Adjust the speed (higher value = faster scrolling)
 
@@ -78,11 +73,6 @@ const Stats = () => {
   return (
     <div className="stats stats-slider">
       <div className="stats-slider-inner grid grid-cols-12 gap-1 stats-slider" ref={partnersRef}>
-=======
-  return (
-    <div className="stats stats-slider ">
-      <div className="stats-slider-inner grid grid-cols-12 gap-1">
->>>>>>> 7d18d2c2b81dec585a5d5633da6ce52b2c574c82
         {data &&
           data.map((item, idx) => (
             <div key={idx} className="col-span-5 sm:col-span-12">

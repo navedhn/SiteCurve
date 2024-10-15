@@ -38,11 +38,7 @@ const Sidebar = () => {
                   </li>
                 ))}
             </ul>
-<<<<<<< HEAD
             <div className="mt-3 -mx-2">
-=======
-            <div className="mt-3">
->>>>>>> 7d18d2c2b81dec585a5d5633da6ce52b2c574c82
               <CustomButton title="Create Landscapes" />
             </div>
           </div>
