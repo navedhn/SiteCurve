@@ -4,13 +4,13 @@
 li,
 p,
 span {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
 }
 #mobile-line {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   color: #000 !important;
   text-align: left !important;
   margin-top: 10px;
@@ -29,7 +29,7 @@ span {
     padding: 50px 50px;
 
     h1 {
-      font-family: Inter;
+      font-family: "Inter", sans-serif;
       font-size: 60px;
       font-weight: 800;
       line-height: 65px;
@@ -38,7 +38,7 @@ span {
     }
 
     p {
-      font-family: Inter;
+      font-family: "Inter", sans-serif;
       font-size: 20px;
       font-weight: 400;
       line-height: 32px;
@@ -47,7 +47,7 @@ span {
     }
 
     .sch-btn {
-      font-family: Inter;
+      font-family: "Inter", sans-serif;
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
@@ -64,7 +64,7 @@ span {
 
     .credit-card {
       color: var(--muted);
-      font-family: Inter;
+      font-family: "Inter", sans-serif;
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;
@@ -82,7 +82,7 @@ span {
       margin-top: 20px;
       display: flex;
       justify-content: center;
-      font-family: Inter;
+      font-family: "Inter", sans-serif;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
@@ -101,7 +101,7 @@ span {
     padding: 50px;
 
     h2 {
-      font-family: Inter;
+      font-family: "Inter", sans-serif;
       font-size: 48px;
       font-weight: 700;
       line-height: 58.09px;
@@ -110,7 +110,7 @@ span {
     }
 
     p {
-      font-family: Inter;
+      font-family: "Inter", sans-serif;
       font-size: 20px;
       font-weight: 400;
       line-height: 24.2px;
@@ -139,7 +139,8 @@ span {
         opacity: 0px;
         font-size: 20px;
         line-height: 24px;
-        font-family: Inter;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
         svg {
           margin-top: 4px;
           width: 15px;
@@ -180,7 +181,7 @@ span {
         li {
           font-size: 18px;
           font-weight: 400;
-          font-family: Inter;
+          font-family: "Inter", sans-serif;
           line-height: 25px;
           svg {
             margin-top: 2.5px;
@@ -191,7 +192,7 @@ span {
 
       h3 {
         color: #353a44;
-        font-family: Inter;
+        font-family: "Inter", sans-serif;
         font-size: 40px;
         font-weight: 600;
         line-height: 50px;
@@ -342,7 +343,7 @@ span {
       padding: 20px;
 
       h1 {
-        font-family: Inter;
+        font-family: "Inter", sans-serif;
         font-size: 36px;
         font-weight: 800;
         line-height: 42px;
@@ -368,7 +369,7 @@ span {
       }
 
       p {
-        font-family: Inter;
+        font-family: "Inter", sans-serif;
         font-size: 16px;
         font-weight: 400;
         line-height: 22px;
@@ -390,13 +391,13 @@ span {
           font-size: 24px;
           font-weight: 600;
           line-height: 28px;
-          font-family: Inter;
+          font-family: "Inter", sans-serif;
         }
 
         ul li {
           font-size: 14px;
           line-height: 20px;
-          font-family: Inter;
+          font-family: "Inter", sans-serif;
         }
 
         .ctm-middle-2 {
@@ -461,6 +462,15 @@ span {
 }
 
 @media (max-width: 767px) {
+  #home .home-both-sec .textboxs-area .text-box-s p {
+    font-weight: 400;
+    line-height: 24px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+  }
+  #home .home-both-sec .textboxs-area .text-box-s h4 {
+    font-family: "Inter", sans-serif;
+  }
   #hero-btn button {
     font-size: 16px !important;
     width: 100% !important;
@@ -479,7 +489,7 @@ span {
           font-size: 16px;
           line-height: 24px;
           font-weight: normal;
-          font-family: Inter;
+          font-family: "Inter", sans-serif;
         }
       }
     }
@@ -488,7 +498,7 @@ span {
         font-size: 14px;
         line-height: 24px;
         font-weight: normal;
-        font-family: Inter;
+        font-family: "Inter", sans-serif;
       }
     }
     .home-both-sec {

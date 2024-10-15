@@ -116,7 +116,7 @@ const Tabs = () => {
         {windowWidth > 767 && <br />} with next-level SEO intelligence
       </h2>
       <p className="mt-5">Click the tabs below to see what makes SiteCurve standout from other SEO tools.</p>
-      <div className="custom-tab">
+      <div className="custom-tab  scrollable-0">
         {tabsData &&
           tabsData.map((item) => (
             <button
