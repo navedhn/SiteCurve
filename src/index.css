@@ -42,7 +42,7 @@
 .primary-btn {
   padding: 8px 10px;
   border-radius: 4px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -57,7 +57,7 @@
 .primary-btn-border {
   padding: 8px 10px;
   border-radius: 4px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
