@@ -57,12 +57,16 @@
     margin-left: 0;
     margin: 0 -20px;
     .menu-items {
+      font-weight: 400;
+      font-family: Inter;
+      line-height: 21.6px;
+      font-size: 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 4px;
       color: var(--l-purple);
-      padding: 10px 15px;
+      padding: 13px 15px;
       border-bottom: 1px solid #2a274e;
       gap: 0px;
     }

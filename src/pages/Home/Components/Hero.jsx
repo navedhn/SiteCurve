@@ -11,16 +11,13 @@ import { IoSearch } from "react-icons/io5";
 function Hero() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // Function to update the state based on window resize
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
 
   useEffect(() => {
-    // Add event listener to update window width on resize
     window.addEventListener("resize", handleResize);
 
-    // Cleanup function to remove the event listener when the component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -29,15 +26,17 @@ function Hero() {
     <section className="hero-section">
       <h1>
         Discover Who’s Winning and
-        {windowWidth > 768 && <br />} Losing in SEO and Why
+        {windowWidth > 767 && <br />} Losing in SEO and Why
       </h1>
       <p className="mt-5">
-        Spot winning and losing websites across your competitive landscape in different {window.innerWidth > 768 && <br />}
+        Spot winning and losing websites across your competitive landscape in different {window.innerWidth > 767 && <br />}
         niches, website types, and business models.
       </p>
       <div className="mt-7 gap-4 flex justify-center flex-wrap">
-        <CustomButton title="Create Landscape - It's Free" />
-        <button className="sch-btn">Schedule Product Demo</button>
+        <div id="hero-btn" className="lg:w-auto md:w-auto w-full">
+          <CustomButton title="Create Landscape - It's Free" />
+        </div>
+        <button className="sch-btn">{windowWidth > 767 ? "Schedule Demo" : "Schedule Product Demo"}</button>
       </div>
       <div className="credit-card flex justify-center mt-5">
         <ReactSVG src={creditCard} /> &nbsp; No Credit Card Required
@@ -45,7 +44,7 @@ function Hero() {
       <div className="section-img-dashboard flex justify-center">
         <img src={section1} />
       </div>
-      {windowWidth > 768 ? (
+      {windowWidth > 767 ? (
         <p className="searching">
           <IoSearch />
           Discover existing landscapes: <span>Real Estate Agents, Credit Cards, Lawyers</span>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // assets
 import frame_1 from "../../../assets/tab_1_fram_1.png";
@@ -7,7 +7,19 @@ import frame_3 from "../../../assets/frame_3.png";
 import frame_4 from "../../../assets/frame_4.png";
 import frame_5 from "../../../assets/portfolio_1.png";
 import frame_6 from "../../../assets/portfolio_2.png";
+import one from "../../../assets/tabsIcons/1.svg";
+import two from "../../../assets/tabsIcons/2.svg";
+import three from "../../../assets/tabsIcons/3.svg";
+import four from "../../../assets/tabsIcons/4.svg";
+import five from "../../../assets/tabsIcons/5.svg";
+import oneColor from "../../../assets/tabsIcons/1-color.svg";
+import twoColor from "../../../assets/tabsIcons/2-color.svg";
+import threeColor from "../../../assets/tabsIcons/3-color.svg";
+import fourColor from "../../../assets/tabsIcons/4-color.svg";
+import fiveColor from "../../../assets/tabsIcons/color-5.svg";
+
 import { BsCheckCircle } from "react-icons/bs";
+import { ReactSVG } from "react-svg";
 
 const Tabs = () => {
   const tabsData = [
@@ -20,6 +32,8 @@ const Tabs = () => {
       li_1: "View the biggest rank movers over custom time periods",
       li_2: "Sort by share of voice, curve, volatility scores",
       li_3: "Analyze shifts in specific categories and niches",
+      icon: one,
+      colorIcon: oneColor,
     },
     {
       id: 2,
@@ -30,6 +44,8 @@ const Tabs = () => {
       li_1: "View top performers by category, niche, site type",
       li_2: "Compare leaders across different SEO metrics",
       li_3: "Identify dominant websites for your specific landscape",
+      icon: two,
+      colorIcon: twoColor,
     },
     {
       id: 3,
@@ -40,6 +56,8 @@ const Tabs = () => {
       li_1: "Discover emerging competitors entering your SEO space",
       li_2: "Analyze how new entrants impact your rankings",
       li_3: "See which niches are becoming increasingly competitive",
+      icon: three,
+      colorIcon: threeColor,
     },
     {
       id: 4,
@@ -52,6 +70,8 @@ const Tabs = () => {
       li_2: "Volatility score to measure rank shifts",
       li_3: "Google score to evaluate Google presence",
       li_4: "Curve score to highlight outperformers",
+      icon: four,
+      colorIcon: fourColor,
     },
     {
       id: 5,
@@ -62,6 +82,8 @@ const Tabs = () => {
       li_1: "Monitor domains or individual URLs in one place",
       li_2: "Track search visibility across entire categories",
       li_3: "Understand how rankings shift across locations",
+      icon: five,
+      colorIcon: fiveColor,
     },
   ];
 
@@ -73,11 +95,25 @@ const Tabs = () => {
 
   const activeTabData = tabsData.find((tab) => tab.id === activeTab);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <section className="tab-section">
       <h2>
         Gain an advantage over your competitors
-        {window.innerWidth > 768 && <br />} with next-level SEO intelligence
+        {windowWidth > 767 && <br />} with next-level SEO intelligence
       </h2>
       <p className="mt-5">Click the tabs below to see what makes SiteCurve standout from other SEO tools.</p>
       <div className="custom-tab">
@@ -88,7 +124,7 @@ const Tabs = () => {
               className={`pill-tabs-btn ${item.id === activeTab ? "active" : ""}`} // Add 'active' class if this is the active tab
               onClick={() => handleTabClick(item.id)} // Update the active tab on click
             >
-              {item.buttonName}
+              {item.id === activeTab ? <ReactSVG src={item.colorIcon} /> : <ReactSVG src={item.icon} />} {item.buttonName}
             </button>
           ))}
       </div>
@@ -109,8 +145,16 @@ const Tabs = () => {
                   </li>
                 ))}
             </ul>
-            <button className="primary-btn my-3">{window.innerWidth > 768 ? "Get Started" : "Create Landscapes"}</button>
+            <button className="primary-btn my-3">{windowWidth > 768 ? "Get Started" : "Create Landscape"}</button>
+            {windowWidth > 767 ? (
+              ""
+            ) : (
+              <p id="mobile-line">
+                ...or <span>discover landscapes</span>
+              </p>
+            )}
           </div>
+
           <div className={`col-span-12 lg:col-span-7 ctm-middle ctm-middle-2 `}>
             <img src={activeTabData.frame_1} alt="Frame 1" className={`${activeTabData.id === 1 ? "frame-1" : activeTabData.id === 2 ? "obj-frame-1" : activeTabData.id === 3 ? "obj-frame-1" : activeTabData.id === 4 ? "obj-frame-2" : activeTabData.id === 5 ? "obj-frame-1 z-0 kks" : ""}`} />
             <img src={activeTabData.frame_2} alt="Frame 2" className={`${activeTabData.id === 1 ? "" : activeTabData.id === 2 ? "frame-2" : activeTabData.id === 3 ? "frame-3" : activeTabData.id === 4 ? "frame-4" : activeTabData.id === 5 ? "frame-3 z-50 mt-20" : ""}`} />
