@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { RiInformation2Line } from "react-icons/ri";
 import { FiArrowUpRight, FiArrowDownLeft } from "react-icons/fi";
@@ -47,7 +47,7 @@ const Stats = () => {
         }
       };
 
-      const continuousScroll = setInterval(scroll, 1000 / 60); // 60 FPS
+      const continuousScroll = setInterval(scroll, 1500 / 60); // 60 FPS
 
       // Event listeners for pausing and resuming the scroll on hover
       const stopScroll = () => {
@@ -58,14 +58,14 @@ const Stats = () => {
         isScrolling = true;
       };
 
-      allPartners.addEventListener('mouseenter', stopScroll);
-      allPartners.addEventListener('mouseleave', resumeScroll);
+      allPartners.addEventListener("mouseenter", stopScroll);
+      allPartners.addEventListener("mouseleave", resumeScroll);
 
       // Cleanup on unmount
       return () => {
         clearInterval(continuousScroll);
-        allPartners.removeEventListener('mouseenter', stopScroll);
-        allPartners.removeEventListener('mouseleave', resumeScroll);
+        allPartners.removeEventListener("mouseenter", stopScroll);
+        allPartners.removeEventListener("mouseleave", resumeScroll);
       };
     }
   }, []);
